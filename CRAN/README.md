@@ -1,6 +1,6 @@
 # CRAN Cache
 
-Upstream is `cran.revolutionanalytics.com` as they're listed as the Texas mirror for CRAN
+Upstream is `mran.revolutionanalytics.com` as they provide daily snapshots of CRAN
 
 ## Example
 
@@ -8,13 +8,13 @@ Upstream is `cran.revolutionanalytics.com` as they're listed as the Texas mirror
 hxr@leda:~/work/gx-package-caching/CRAN$ docker-compose up -d
 Creating cran_squid_1...
 hxr@leda:~/work/gx-package-caching/CRAN$ # First an uncached request
-hxr@leda:~/work/gx-package-caching/CRAN$ time wget --quiet http://localhost:3128/src/contrib/CommonJavaJars_1.0-5.tar.gz
+hxr@leda:~/work/gx-package-caching/CRAN$ time wget --quiet http://localhost:3128/snapshot/2015-06-22/src/contrib/CommonJavaJars_1.0-5.tar.gz
 
 real    0m1.338s
 user    0m0.016s
 sys     0m0.048s
 hxr@leda:~/work/gx-package-caching/CRAN$ # This time from squid's cache
-hxr@leda:~/work/gx-package-caching/CRAN$ time wget --quiet http://localhost:3128/src/contrib/CommonJavaJars_1.0-5.tar.gz
+hxr@leda:~/work/gx-package-caching/CRAN$ time wget --quiet http://localhost:3128/snapshot/2015-06-22/src/contrib/CommonJavaJars_1.0-5.tar.gz
 
 real    0m0.024s
 user    0m0.004s
