@@ -1,0 +1,7 @@
+squid:
+  image: sameersbn/squid:latest
+  ports:
+    - 3128:3128
+  volumes:
+    - cache.conf:/etc/squid3/squid.user.conf
+    - cache:/var/spool/squid3/
